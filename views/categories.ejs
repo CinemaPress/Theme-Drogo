@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+
+<div class="header_black"></div>
+
+<div class="wrapper">
+
+    <% include includes/header.ejs %>
+
+    <div class="contener">
+
+        <div class="contener2">
+
+            <div class="content">
+
+                <div id="cinemapress-content">
+
+                    <div style="padding: 9px 10px 8px 20px; border-bottom: 1px solid #848480;">
+						<span>
+							<a href="<%- page.protocol %><%- page.domain %>">
+								Главная
+							</a>
+						</span> »
+                        <%- page.title %>
+                    </div>
+
+                    <div style="margin: 10px auto; text-align: center">
+                        <h1><%- page.title %></h1>
+                    </div>
+
+                    <% if (typeof categories == 'object' && categories.length) { %>
+
+                    <% categories.forEach(function (category) { %>
+
+                    <a href="<%- category.url %>" target="_blank" style="float: left; margin: 11px; text-decoration: none; width: 190px; overflow: hidden; white-space: nowrap;">
+                        <img src="<% if (category.image) { %><%- category.image %><% } %>" style="width: 190px; height: 100px; border-radius: 10px;" title="<%- category.name %>" alt="<%- category.name %>">
+                        <div><%- category.name %></div>
+                    </a>
+
+                    <% }); %>
+
+                    <% } %>
+
+                    <div style="clear:both"></div>
+
+                    <% if (page.seo) { %>
+
+                    <div style="margin: 20px 10px;">
+                        <%- page.seo %>
+                    </div>
+
+                    <% } %>
+
+                </div>
+
+            </div>
+
+            <% include includes/left.ejs %>
+
+        </div>
+
+    </div>
+
+    <% include includes/footer.ejs %>
+
+</div>
+
+</body>
+</html>

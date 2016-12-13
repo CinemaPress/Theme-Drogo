@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+
+    <% include includes/head.ejs %>
+
+</head>
+<body>
+
+<div class="header_black"></div>
+
+<div class="wrapper">
+
+    <% include includes/header.ejs %>
+
+    <div class="contener">
+
+        <div class="contener2">
+
+            <div class="content">
+
+                <div id="cinemapress-content">
+
+                    <div style="margin: 10px auto; text-align: center">
+                        <h1><%- page.title %></h1>
+                    </div>
+
+                    <% if (typeof movies == 'object') { for (var type in movies) { if (movies.hasOwnProperty(type)) { %>
+
+                    <% if (movies[type].length) { %>
+
+                    <% movies[type].forEach(function (category) { %>
+
+                    <h2 style="padding: 7px 20px;position: relative;border-bottom: 1px solid #3f413f;"><%- category.name %></h2>
+
+                    <% if (category.movies.length) { %>
+
+                    <% category.movies.forEach(function (movie) { %>
+
+                    <div class="shortstory">
+
+                        <div class="shortstorytitle">
+                            <h2 class="zagolovki">
+                                <a href="<%- movie.url %>"><%- movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> сезон <%- movie.episode %> серия <% if (movie.translate) { %><%- movie.translate %><% } %><% } else { %><%- movie.year %><% } %>)</a>
+                            </h2>
+                        </div>
+
+                        <div class="shortimg">
+                            <div style="display:inline;">
+                                <a href="<%- movie.url %>">
+                                    <img src="<%- movie.poster %>" style="float:left; width: 200px; height: 300px;" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                </a>
+                                <div style="text-align: justify;">
+                                    <%- movie.description_short %>...
+                                </div>
+                                <br><br>
+                                <% if (movie.kp_rating) { %>
+                                <b>КиноПоиск:</b> <%- movie.kp_rating/10 %> (<%- movie.kp_vote %> голосов)<br>
+                                <% } %>
+                                <% if (movie.imdb_rating) { %>
+                                <b>IMDb:</b> <%- movie.imdb_rating/10 %> (<%- movie.imdb_vote %> голосов)<br>
+                                <% } %>
+                                <br>
+                                <% if (movie.year_url) { %>
+                                <b>Год выпуска:</b> <%- movie.year_url %><br>
+                                <% } %>
+                                <% if (movie.countries_url) { %>
+                                <b>Страна:</b> <%- movie.countries_url %><br>
+                                <% } %>
+                                <% if (movie.genres_url) { %>
+                                <b>Жанр:</b> <%- movie.genres_url %><br>
+                                <% } %>
+                                <br>
+                                <% if (movie.directors_url) { %>
+                                <b>Режиссер:</b> <%- movie.directors_url %><br>
+                                <% } %>
+                                <% if (movie.actors_url) { %>
+                                <b>Актеры:</b> <%- movie.actors_url %><br>
+                                <% } %>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="clear:both"></div>
+
+                    <div class="icons">
+                        <span class="podrobnee" style="padding: 4px 0 4px 20px;">
+                            <a href="<%- movie.url %>">
+                                <span class="fbutton-img">
+                                    <img src="/themes/drogo/public/img/viewmore.png" alt="смотреть <%- movie.title %> (<%- movie.year %>) онлайн" border="0">
+                                </span>
+                            </a>
+                        </span>
+                        <span style="float:right; padding: 7px 20px 19px 20px;">
+                            <span class="dateicon" title="Дата"><%- movie.premiere %></span>
+                        </span>
+                    </div>
+
+                    <% }); %>
+
+                    <% } %>
+
+                    <% }); %>
+
+                    <% } %>
+
+                    <% } } } %>
+
+                    <div style="clear:both"></div>
+
+                    <% if (page.seo) { %>
+
+                    <div style="margin: 20px 10px;">
+                        <%- page.seo %>
+                    </div>
+
+                    <% } %>
+
+                </div>
+
+                <div style="clear:both"></div>
+
+            </div>
+
+            <% include includes/left.ejs %>
+
+        </div>
+
+    </div>
+
+    <% include includes/footer.ejs %>
+
+</div>
+
+</body>
+</html>

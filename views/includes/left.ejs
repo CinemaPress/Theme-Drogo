@@ -1,0 +1,89 @@
+<span class="leftblok_contener">
+    <div style="padding: 7px 20px;position: relative;border-bottom: 1px solid #3f413f;">
+        <i style="font-size:15px;">Панель навигации</i>
+    </div>
+    <span class="leftblok_contener2">
+        <div class="leftblok1">
+            <div class="miniblock">
+                <div class="mini" style="border-top:0px; padding-top:0px;">
+                    <i style="font-size:14px;">Категории</i><br><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/биография">Биографии</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/боевик">Боевики</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/вестерн">Вестерны</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/военный">Военные</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детектив">Детективы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детский">Детские</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/документальный">Документальные</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/драма">Драмы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/история">Исторические</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/комедия">Комедии</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/криминал">Криминал</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мелодрама">Мелодрамы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мультфильм">Мультфильмы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мюзикл">Мюзиклы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Россия">Отечественные</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/приклюения">Приключения</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/семейный">Семейные</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/спорт">Cпортивные</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/триллер">Триллеры</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/ужасы">Ужасы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фантастика">Фантастика</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фэнтези">Фэнтези</a>
+                </div>
+                <div style="padding-top:20px;"></div>
+            </div>
+        </div>
+        <div class="leftblok2">
+            <div class="miniblock">
+                <div class="mini" style="border-top:0px; padding-top:0px;">
+                    <i style="font-size:14px;">По году</i><br><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014">2014 года</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015">2015 года</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016">2016 года</a><br>
+                    <div class="poloska"></div>
+                </div>
+                <div class="mini">
+                    <i style="font-size:14px;">По странам</i><br><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/США">Американские</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Великобритания">Британские</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Россия">Российские</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Индия">Индийские</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Германия">Немецкие</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Франция">Французские</a>
+                    <div class="poloska"></div></div>
+                <div class="mini">
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>">Все годы</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>">Все жанры</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>">Все страны</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>">Все актеры</a><br>
+                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>">Все режиссеры</a><br>
+                </div>
+            </div>
+        </div>
+    </span>
+    <% if (typeof soon == 'object' && soon.movies.length) { %>
+
+    <div class="poloska_bloka"></div>
+
+    <div style="padding: 7px 20px;
+position: relative;
+border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро на сайте</i></div>
+
+    <div class="mimiserblock">
+
+        <% soon.movies.forEach(function (movie) { %>
+
+        <a href="<%- movie.url %>" rel="nofollow">
+            <li class="li_serial">
+                <img src="<%- movie.poster %>"><br>
+                <%- movie.title %> (<%- movie.year %>)
+            </li>
+        </a>
+
+        <% }); %>
+
+    </div>
+
+    <% } %>
+
+ </span>

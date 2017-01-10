@@ -1,4 +1,4 @@
-<span class="leftblok_contener">
+<div class="leftblok_contener">
     <div style="padding: 7px 20px;position: relative;border-bottom: 1px solid #3f413f;">
         <i style="font-size:15px;">Панель навигации</i>
     </div>
@@ -86,4 +86,10 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро на с
 
     <% } %>
 
- </span>
+    <% if (typeof page.adv == 'object' && page.adv.left) { %>
+    <div style="text-align: center; margin: 10px auto">
+        <%- page.adv.left %>
+    </div>
+    <% } %>
+
+ </div>

@@ -38,6 +38,12 @@
                         Онлайн
                     </div>
 
+                    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                    <div style="text-align: center; margin: 10px auto">
+                        <%- page.adv.top %>
+                    </div>
+                    <% } %>
+
                     <div class="fullstory">
 
                         <div class="shortstorytitle">
@@ -116,6 +122,12 @@
 
                 <div style="clear: both"></div>
 
+                <% if (typeof page.adv == 'object' && page.adv.over) { %>
+                <div style="text-align: center; margin: 10px auto">
+                    <%- page.adv.over %>
+                </div>
+                <% } %>
+
                 <div class="section">
 
                     <div class="watchLaterBlock" style="float:right; padding-top: 5px;padding-right: 10px;font-size:11px; display: none;">
@@ -136,6 +148,12 @@
                     </div>
 
                 </div>
+
+                <% if (typeof page.adv == 'object' && page.adv.under) { %>
+                <div style="text-align: center; margin: 10px auto">
+                    <%- page.adv.under %>
+                </div>
+                <% } %>
 
                 <% if (page.seo) { %>
 
@@ -188,6 +206,12 @@
                 <% if (page.comments) { %>
                 <div style="padding: 10px;">
                     <%- page.comments %>
+                </div>
+                <% } %>
+
+                <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                <div style="text-align: center; margin: 10px auto">
+                    <%- page.adv.bottom %>
                 </div>
                 <% } %>
 

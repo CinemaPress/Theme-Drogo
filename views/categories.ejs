@@ -30,6 +30,12 @@
                         <%- page.title %>
                     </div>
 
+                    <% if (typeof page.adv == 'object' && page.adv.top) { %>
+                    <div style="text-align: center; margin: 10px auto">
+                        <%- page.adv.top %>
+                    </div>
+                    <% } %>
+
                     <div style="margin: 10px auto; text-align: center">
                         <h1><%- page.title %></h1>
                     </div>
@@ -48,6 +54,12 @@
                     <% } %>
 
                     <div style="clear:both"></div>
+
+                    <% if (typeof page.adv == 'object' && page.adv.bottom) { %>
+                    <div style="text-align: center; margin: 10px auto">
+                        <%- page.adv.bottom %>
+                    </div>
+                    <% } %>
 
                     <% if (page.seo) { %>
 

@@ -1,15 +1,16 @@
-# Theme Drogo
+# Шаблон «drogo»
 
-![Шаблон «Drogo» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png "Шаблон «Drogo» для CinemaPress ACMS")
+![Шаблон «drogo» для CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png "Шаблон «drogo» для CinemaPress ACMS")
 
-:art: Шаблон «Drogo» для CinemaPress ACMS
+:art: Шаблон «drogo» для CinemaPress ACMS
 
-- <a href="http://Drogo.CinemaPress.org/" target="_blank">Drogo.CinemaPress.org</a>
+- [Drogo.CinemaPress.org](http://Drogo.CinemaPress.org/)
 
 ## Установка
-1. [Скачать архив](https://github.com/CinemaPress/Theme-Drogo/archive/master.zip)
-2. Распаковать содержимое папки **/Theme-Drogo-master** в папку **/themes/drogo**
-3. Изменить название темы в админ-панели на **drogo**
+1. Скачать архив с [GitHub](https://github.com/CinemaPress/Theme-Drogo/archive/master.zip) или [GitLab](https://gitlab.com/CinemaPress/Theme-Drogo/repository/archive.zip) или [BitBucket](https://bitbucket.org/cinemapress/theme-drogo/get/master.zip) или [Coding](https://coding.net/u/CinemaPress/p/Theme-Drogo/git/archive/master.zip)
+2. Распаковать архив и переименовать папку в **drogo**
+3. Папку **drogo** отправить на сервер в папку **themes**
+4. Изменить название темы в админ-панели на **drogo**
 
 ## Установка через установщик тем CinemaPress ACMS
 ```

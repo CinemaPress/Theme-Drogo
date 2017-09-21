@@ -1,120 +1,106 @@
 <div class="header">
-
     <div class="header44">
-
         <div class="main_menu">
-            <a href="/">
-                <img src="/themes/drogo/public/img/logo.png" height="26">
-            </a>
+            <a href="/"><img src="/themes/drogo/public/img/logo.png" style="height: 26px" alt="LOGO"></a>
         </div>
-
         <div class="user_panel">
             <div class="loginin continueViewingBlock" style="display: none;">
                 <a href="javascript:void(0)" id="continueViewing">На чем остановились?</a>
             </div>
         </div>
-
         <div class="search_panel">
-            <span class="searchbar">
-                <form action="<%- page.protocol %><%- page.domain %>/<%- page.urls.search %>/title" name="searchform" method="get">
-                    <input name="q" value="Название" onblur="if(this.value=='') this.value='Название';" onfocus="if(this.value=='Название') this.value='';" type="text">
+            <div class="searchbar">
+                <form action="/<%- page.urls.search %>/title" name="searchform" method="get">
+                    <input name="q" placeholder="Название" type="text">
                     <button class="fbutton2" type="submit" title="Найти" style="float: right;">
-                        <span>Найти</span>
+                        Найти
                     </button>
                 </form>
-            </span>
+            </div>
         </div>
-
     </div>
-
     <div class="header55">
-
         <div class="leftblok1_header">
-
             <div class="navigation">
-
                 <div class="topmenu"></div>
-
                 <div class="deepnavigation">
-
                     <table class="menu">
                         <tbody>
                         <tr>
                             <td class="item">
-                                <a href="<%- page.protocol %><%- page.domain %>"><span class="name">Главная</span></a>
+                                <a href="/"><span class="name">Главная</span></a>
                             </td>
                             <td class="item">
-                                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016"><span class="name">Новинки</span></a>
+                                <a href="/<%- page.urls.year %>/2017"><span class="name">Новинки</span></a>
                             </td>
                             <td class="item">
-                                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.type %>/<%- page.urls.types.serial %>"><span class="name">Сериалы</span></a>
+                                <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><span class="name">Сериалы</span></a>
                             </td>
                             <td class="item">
-                                <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.collection %>"><span class="name">Коллекции</span></a>
+                                <a href="/<%- page.urls.content %>?tag=Коллекция"><span class="name">Коллекции</span></a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     <div style="clear:both"></div>
-
     <div class="horizontal2">
         <div class="horizontal">
 
-            <% if (typeof top == 'object' && top.movies.length) { %>
-
+            <% if (typeof top === 'object' && top.length) { %>
             <div class="carousel">
                 <a class="carousel_prev carousel_left disable" href="">prev</a>
                 <div class="carousel_container">
                     <ul class="portfolio_items">
-
-                        <% top.movies.forEach(function (movie) { %>
-
+                        <% top.forEach(function (movie) { %>
                         <li>
                             <div class="inner">
-                                <a href="<%- movie.url %>" title="<%- movie.title %>"><img src="<%- movie.poster %>" width="118"></a>
+                                <a href="<%- movie.url %>" title="<%- movie.title %>">
+                                    <div style="position: relative;">
+                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                        <% if (movie.quality) { %>
+                                        <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
+                                            <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                </a>
                             </div>
                         </li>
-
                         <% }); %>
-
                     </ul>
                 </div>
                 <a class="carousel_next carousel_right" href="">next</a>
             </div>
-
-            <% } else if (typeof slider == 'object' && slider.movies.length) { %>
-
+            <% } else if (typeof slider === 'object' && slider.length) { %>
             <div class="carousel">
                 <a class="carousel_prev carousel_left disable" href="">prev</a>
                 <div class="carousel_container">
                     <ul class="portfolio_items">
-
-                        <% slider.movies.forEach(function (movie) { %>
-
+                        <% slider.forEach(function (movie) { %>
                         <li>
                             <div class="inner">
-                                <a href="<%- movie.url %>" title="<%- movie.title %>"><img src="<%- movie.poster %>" width="118"></a>
+                                <a href="<%- movie.url %>" title="<%- movie.title %>">
+                                    <div class="cinemapress-poster">
+                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                        <% if (movie.quality) { %>
+                                        <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
+                                            <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                </a>
                             </div>
                         </li>
-
                         <% }); %>
-
                     </ul>
                 </div>
                 <a class="carousel_next carousel_right" href="">next</a>
             </div>
-
             <% } %>
-
         </div>
     </div>
-
-
 </div>

@@ -1,34 +1,18 @@
 <div class="leftblok_contener">
+
     <div style="padding: 7px 20px;position: relative;border-bottom: 1px solid #3f413f;">
         <i style="font-size:15px;">Панель навигации</i>
     </div>
-    <span class="leftblok_contener2">
+    <div class="leftblok_contener2">
         <div class="leftblok1">
             <div class="miniblock">
                 <div class="mini" style="border-top:0px; padding-top:0px;">
                     <i style="font-size:14px;">Категории</i><br><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/биография">Биографии</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/боевик">Боевики</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/вестерн">Вестерны</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/военный">Военные</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детектив">Детективы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/детский">Детские</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/документальный">Документальные</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/драма">Драмы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/история">Исторические</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/комедия">Комедии</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/криминал">Криминал</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мелодрама">Мелодрамы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мультфильм">Мультфильмы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/мюзикл">Мюзиклы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Россия">Отечественные</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/приключения">Приключения</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/семейный">Семейные</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/спорт">Cпортивные</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/триллер">Триллеры</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/ужасы">Ужасы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фантастика">Фантастика</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>/фэнтези">Фэнтези</a>
+                    <% page.urls.genres.forEach(function(genre) { %>
+                    <a href="<%- genre.url %>">
+                        <%- genre.title %>
+                    </a><br>
+                    <% }); %>
                 </div>
                 <div style="padding-top:20px;"></div>
             </div>
@@ -37,60 +21,101 @@
             <div class="miniblock">
                 <div class="mini" style="border-top:0px; padding-top:0px;">
                     <i style="font-size:14px;">По году</i><br><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2014">2014 года</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2015">2015 года</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2016">2016 года</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>/2017">2017 года</a><br>
+                    <% page.urls.years.slice(0,10).forEach(function(year) { %>
+                    <a href="<%- year.url %>">
+                        <%- year.title %> года
+                    </a><br>
+                    <% }); %>
                     <div class="poloska"></div>
                 </div>
                 <div class="mini">
                     <i style="font-size:14px;">По странам</i><br><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/США">Американские</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Великобритания">Британские</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Россия">Российские</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Индия">Индийские</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Германия">Немецкие</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>/Франция">Французские</a>
+                    <% page.urls.countries.slice(0,9).forEach(function(country) { %>
+                    <a href="<%- country.url %>">
+                        <%- country.title %>
+                    </a><br>
+                    <% }); %>
                     <div class="poloska"></div></div>
                 <div class="mini">
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.year %>">Все годы</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.genre %>">Все жанры</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.country %>">Все страны</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.actor %>">Все актеры</a><br>
-                    <a href="<%- page.protocol %><%- page.domain %>/<%- page.urls.director %>">Все режиссеры</a><br>
+                    <a href="/<%- page.urls.year %>">Все годы</a><br>
+                    <a href="/<%- page.urls.genre %>">Все жанры</a><br>
+                    <a href="/<%- page.urls.country %>">Все страны</a><br>
+                    <a href="/<%- page.urls.actor %>">Все актеры</a><br>
+                    <a href="/<%- page.urls.director %>">Все режиссеры</a><br>
                 </div>
             </div>
         </div>
-    </span>
-    <% if (typeof soon == 'object' && soon.movies.length) { %>
-
+    </div>
+    <% if (typeof soon === 'object' && soon.length) { %>
     <div class="poloska_bloka"></div>
-
     <div style="padding: 7px 20px;
 position: relative;
 border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро на сайте</i></div>
-
     <div class="mimiserblock">
-
-        <% soon.movies.forEach(function (movie) { %>
-
-        <a href="<%- movie.url %>" rel="nofollow">
-            <li class="li_serial">
-                <img src="<%- movie.poster %>"><br>
+        <ul>
+        <% soon.forEach(function (movie) { %>
+        <li class="li_serial">
+            <a href="<%- movie.url %>" rel="nofollow">
+                <img src="<%- movie.poster %>" alt="<%- movie.title %>">
+                <br>
                 <%- movie.title %> (<%- movie.year %>)
-            </li>
-        </a>
-
+            </a>
+        </li>
         <% }); %>
-
+        </ul>
     </div>
-
     <% } %>
 
-    <% if (typeof page.adv == 'object' && page.adv.left) { %>
+    <% if (typeof news === 'object' && news.length) { %>
+    <% news.forEach(function (content) { %>
+    <div style="margin: 10px;">
+        <a href="<%- content.url %>" class="cinemapress-news">
+            <img src="<%- content.image %>" class="cinemapress-news-image" alt="<%- content.title %>">
+            <div class="cinemapress-news-title">
+                <%- content.title %>
+            </div>
+        </a>
+    </div>
+    <% }); %>
+    <% } %>
+
+    <% if (typeof page.adv === 'object' && page.adv.left) { %>
     <div style="text-align: center; margin: 10px auto">
         <%- page.adv.left %>
     </div>
+    <% } %>
+
+    <% if (typeof recent === 'object' && recent.length) { %>
+    <% recent.forEach(function (comment) { %>
+    <div style="margin: 10px;">
+        <div class="cinemapress-recent">
+            <div class="cinemapress-recent-head">
+                <% if (comment.avatar) { %>
+                <div class="cinemapress-recent-head-avatar">
+                    <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
+                </div>
+                <% } %>
+                <div class="cinemapress-recent-head-meta">
+                    <div>
+                        <a href="<%- comment.url %>"><%- comment.title %></a>
+                    </div>
+                    <div>
+                        <span>
+                            <%- comment.user %>
+                        </span><span>
+                            сказал(а)
+                        </span><span>
+                            <%- comment.date %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="cinemapress-recent-comment">
+                <%- comment.comment %>
+            </div>
+        </div>
+    </div>
+    <% }); %>
     <% } %>
 
  </div>

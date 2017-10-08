@@ -114,15 +114,21 @@
                             <div style="clear: both"></div>
 
                             <% if (movie.pictures.length) { %>
-
-                            <div class="screens">
+                            <div class="screens" id="lightgallery">
                                 <% movie.pictures.forEach(function (picture) { %>
-                                <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">
+                                <% var ahref = page.urls.movies.picture
+                                        ? movie.url + '/' + page.urls.movies.picture
+                                        : picture.picture_big %>
+                                <a href="<%- ahref %>">
                                     <img src="<%- picture.picture_min %>" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
                                 </a>
                                 <% }); %>
                             </div>
-
+                            <% if (page.urls.movies.picture) { %>
+                            <link href="/themes/drogo/public/css/lightgallery.min.css" rel="stylesheet">
+                            <script src="/themes/drogo/public/js/lightgallery.min.js"></script>
+                            <script>lightGallery(document.getElementById('lightgallery'));</script>
+                            <% } %>
                             <% } %>
 
                             <div style="clear: both"></div>
@@ -149,15 +155,23 @@
 
                 <div class="section">
 
-                    <div class="watchLaterBlock" style="float:right; padding-top: 5px;padding-right: 10px;font-size:11px; display: none;">
+                    <div class="watchLaterBlock" style="float:right;padding: 7px 10px 7px 0;font-size:11px;display: none;">
                         <a href="javascript:void(0)" id="watchLater">Досмотреть позже</a>
                     </div>
 
                     <div class="tabs">
+                        <% if (page.urls.movies.online) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                        <% } %>
+                        <% if (page.urls.movies.download) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                        <% } %>
+                        <% if (page.urls.movies.trailer) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
+                        <% } %>
+                        <% if (page.urls.movies.picture) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                        <% } %>
                     </div>
 
                     <div style="clear:both"></div>

@@ -136,10 +136,18 @@
                 <div class="section">
 
                     <div class="tabs">
+                        <% if (page.urls.movies.online) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.online %>">Онлайн</a>
+                        <% } %>
+                        <% if (page.urls.movies.download) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.download %>">Скачать</a>
+                        <% } %>
+                        <% if (page.urls.movies.trailer) { %>
                         <a href="<%- movie.url %>/<%- page.urls.movies.trailer %>">Трейлер</a>
-                        <a class="current" href="<%- movie.url %>/<%- page.urls.movies.picture %>">Кадры</a>
+                        <% } %>
+                        <% if (page.urls.movies.picture) { %>
+                        <a href="<%- movie.url %>/<%- page.urls.movies.picture %>" class="current">Кадры</a>
+                        <% } %>
                     </div>
 
                     <div style="clear:both"></div>

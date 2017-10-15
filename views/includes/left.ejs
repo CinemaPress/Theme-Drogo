@@ -56,9 +56,9 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро пре�
         <% soon.forEach(function (movie) { %>
         <li class="li_serial">
             <a href="<%- movie.url %>" rel="nofollow">
-                <img src="<%- movie.poster %>" alt="<%- movie.title %>">
+                <img src="<%- movie.poster %>" alt="<%= movie.title %>">
                 <br>
-                <%- movie.title %> (<%- movie.year %>)
+                <%= movie.title %> (<%- movie.year %>)
             </a>
         </li>
         <% }); %>

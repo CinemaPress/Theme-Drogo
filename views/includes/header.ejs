@@ -58,9 +58,9 @@
                         <% top.forEach(function (movie) { %>
                         <li>
                             <div class="inner">
-                                <a href="<%- movie.url %>" title="<%- movie.title %>">
+                                <a href="<%- movie.url %>" title="<%= movie.title %>">
                                     <div style="position: relative;">
-                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
                                         <% if (movie.quality) { %>
                                         <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
                                             <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
@@ -83,9 +83,9 @@
                         <% slider.forEach(function (movie) { %>
                         <li>
                             <div class="inner">
-                                <a href="<%- movie.url %>" title="<%- movie.title %>">
+                                <a href="<%- movie.url %>" title="<%= movie.title %>">
                                     <div class="cinemapress-poster">
-                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
                                         <% if (movie.quality) { %>
                                         <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
                                             <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>

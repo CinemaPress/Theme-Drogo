@@ -81,7 +81,7 @@
                     <div class="shortstory">
                         <div class="shortstorytitle">
                             <h2 class="zagolovki">
-                                <a href="<%- movie.url %>"><%- movie.title %> (<%- movie.year %>)</a>
+                                <a href="<%- movie.url %>"><%= movie.title %> (<%- movie.year %>)</a>
                             </h2>
                         </div>
                         <div class="shortimg">
@@ -89,7 +89,7 @@
                                 <% if (movie.poster) { %>
                                 <a href="<%- movie.url %>" style="float: left;">
                                     <div class="cinemapress-poster">
-                                        <img src="<%- movie.poster %>" style="width: 200px; height: 300px;" alt="<%- movie.title %> (<%- movie.year %>)" title="<%- movie.title %> (<%- movie.year %>)">
+                                        <img src="<%- movie.poster %>" style="width: 200px; height: 300px;" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
                                         <% if (movie.quality) { %>
                                         <div class="cinemapress-quality">
                                             <span class="cinemapress-svg-quality"></span>

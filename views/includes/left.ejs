@@ -1,13 +1,13 @@
 <div class="leftblok_contener">
 
     <div style="padding: 7px 20px;position: relative;">
-        <i style="font-size:15px;">Панель навигации</i>
+        <i style="font-size:15px;"><%- page.l.navigation %></i>
     </div>
     <div class="leftblok_contener2">
         <div class="leftblok1">
             <div class="miniblock">
                 <div class="mini" style="border-top:0px; padding-top:0px;">
-                    <i style="font-size:14px;">Категории</i><br><br>
+                    <i style="font-size:14px;"><%- page.l.menu %></i><br><br>
                     <% page.urls.genres.forEach(function(genre) { %>
                     <a href="<%- genre.url %>">
                         <%- genre.title %>
@@ -20,16 +20,16 @@
         <div class="leftblok2">
             <div class="miniblock">
                 <div class="mini" style="border-top:0px; padding-top:0px;">
-                    <i style="font-size:14px;">По году</i><br><br>
+                    <i style="font-size:14px;"><%- page.l.years %></i><br><br>
                     <% page.urls.years.slice(0,10).forEach(function(year) { %>
                     <a href="<%- year.url %>">
-                        <%- year.title %> года
+                        <%- year.title %>
                     </a><br>
                     <% }); %>
                     <div class="poloska"></div>
                 </div>
                 <div class="mini">
-                    <i style="font-size:14px;">По странам</i><br><br>
+                    <i style="font-size:14px;"><%- page.l.countries %></i><br><br>
                     <% page.urls.countries.slice(0,9).forEach(function(country) { %>
                     <a href="<%- country.url %>">
                         <%- country.title %>
@@ -37,11 +37,11 @@
                     <% }); %>
                     <div class="poloska"></div></div>
                 <div class="mini">
-                    <a href="/<%- page.urls.year %>">Все годы</a><br>
-                    <a href="/<%- page.urls.genre %>">Все жанры</a><br>
-                    <a href="/<%- page.urls.country %>">Все страны</a><br>
-                    <a href="/<%- page.urls.actor %>">Все актеры</a><br>
-                    <a href="/<%- page.urls.director %>">Все режиссеры</a><br>
+                    <a href="/<%- page.urls.year %>"><%- page.l.allYears %></a><br>
+                    <a href="/<%- page.urls.genre %>"><%- page.l.allGenres %></a><br>
+                    <a href="/<%- page.urls.country %>"><%- page.l.allCountries %></a><br>
+                    <a href="/<%- page.urls.actor %>"><%- page.l.allActors %></a><br>
+                    <a href="/<%- page.urls.director %>"><%- page.l.allDirectors %></a><br>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
     <div class="poloska_bloka"></div>
     <div style="padding: 7px 20px;
 position: relative;
-border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро премьеры</i></div>
+border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- page.l.soon %></i></div>
     <div class="mimiserblock">
         <ul>
         <% soon.forEach(function (movie) { %>
@@ -102,7 +102,7 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;">Скоро пре�
                         <span>
                             <%- comment.user %>
                         </span><span>
-                            сказал(а)
+                            <%- page.l.said %>
                         </span><span>
                             <%- comment.date %>
                         </span>

@@ -1,10 +1,10 @@
 # Theme «drogo»
 
-![Theme «drogo» for CinemaPress ACMS](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png "Theme «drogo» for CinemaPress ACMS")
+![Theme «drogo» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png "Theme «drogo» for CinemaPress")
 
-:art: Theme «drogo» for CinemaPress ACMS
+:art: Theme «drogo» for CinemaPress
 
-- [Drogo.CinemaPress.org](http://Drogo.CinemaPress.org/)
+- [Drogo.CinemaPress.io](http://Drogo.CinemaPress.io/)
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Drogo/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Drogo/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-drogo/get/master.zip) or [Coding](https://coding.net/u/CinemaPress/p/Theme-Drogo/git/archive/master.zip)
@@ -14,7 +14,7 @@
 
 ## Installation via terminal
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```
 
 ## Как установить?
@@ -25,5 +25,5 @@
 
 ## Установка через терминал
 ```
-~# wget cinemapress.org/i -qO i && chmod +x i && ./i 3
+~# bash <(wget -qO- cinemapress.sh)
 ```

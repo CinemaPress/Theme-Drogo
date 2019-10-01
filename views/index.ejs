@@ -33,15 +33,24 @@
                             if (index.hasOwnProperty(type) && index[type].length) {
                                 index[type].forEach(function (category) { %>
 
-                    <h2 style="padding: 7px 20px;position: relative;"><%- category.name %></h2>
+                    <h2>
+                        <%- category.name %>
+                        <div class="randomMovieIndex">
+                            <div class="cinemapress-random-index"
+                                 onclick="window.location.href='<%- category.url %>?random'"
+                                 title="<%- page.l.random %>">
+                                <img src="/themes/drogo/public/images/dice.svg" alt="<%- page.l.random %>">
+                            </div>
+                        </div>
+                    </h2>
 
                     <% if (category.movies.length) {
                         category.movies.forEach(function (movie) { %>
                     <div class="shortstory">
                         <div class="shortstorytitle">
-                            <h2 class="zagolovki">
+                            <h3 class="zagolovki">
                                 <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a>
-                            </h2>
+                            </h3>
                         </div>
                         <div class="shortimg">
                             <div style="display:inline;">

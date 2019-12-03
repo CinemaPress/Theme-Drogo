@@ -46,6 +46,33 @@
             </div>
         </div>
     </div>
+
+    <% if (typeof index === 'object') {
+            for (var type in index) {
+    if (index.hasOwnProperty(type) && index[type].length && type === 'episode') {
+    index[type].forEach(function (category) { %>
+
+        <div class="poloska_bloka"></div>
+        <div style="padding: 7px 20px;
+position: relative;
+border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name %></i></div>
+        <div class="mimiserblock">
+            <ul>
+                <% if (category.movies.length) {
+                category.movies.forEach(function (movie) { %>
+                    <li class="li_serial">
+                        <a href="<%- movie.url %>" rel="nofollow">
+                            <img src="<%- movie.poster %>" alt="<%= movie.title %>">
+                            <br>
+                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>(<%- movie.translate %>)<% } %><% } %>
+                        </a>
+                    </li>
+                <% }); } %>
+            </ul>
+        </div>
+
+    <% }); } } } %>
+
     <% if (typeof soon === 'object' && soon.length) { %>
     <div class="poloska_bloka"></div>
     <div style="padding: 7px 20px;

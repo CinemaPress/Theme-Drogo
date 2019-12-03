@@ -64,7 +64,8 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name 
                         <a href="<%- movie.url %>" rel="nofollow">
                             <img src="<%- movie.poster %>" alt="<%= movie.title %>">
                             <br>
-                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %>(<%- movie.translate %>)<% } %><% } %>
+                            <%= movie.title %> (<%- movie.year %>)<br>
+                            <small><% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% if (movie.translate) { %><br>(<%- movie.translate %>)<% } %><% } %></small>
                         </a>
                     </li>
                 <% }); } %>

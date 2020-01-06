@@ -9,9 +9,9 @@
                 <div class="mini" style="border-top:0px; padding-top:0px;">
                     <i style="font-size:14px;"><%- page.l.menu %></i><br><br>
                     <% page.urls.genres.forEach(function(genre) { %>
-                    <a href="<%- genre.url %>">
-                        <%- genre.title %>
-                    </a><br>
+                        <a href="<%- genre.url %>">
+                            <%- genre.title %>
+                        </a><br>
                     <% }); %>
                 </div>
                 <div style="padding-top:20px;"></div>
@@ -22,18 +22,18 @@
                 <div class="mini" style="border-top:0px; padding-top:0px;">
                     <i style="font-size:14px;"><%- page.l.years %></i><br><br>
                     <% page.urls.years.slice(0,10).forEach(function(year) { %>
-                    <a href="<%- year.url %>">
-                        <%- year.title %>
-                    </a><br>
+                        <a href="<%- year.url %>">
+                            <%- year.title %>
+                        </a><br>
                     <% }); %>
                     <div class="poloska"></div>
                 </div>
                 <div class="mini">
                     <i style="font-size:14px;"><%- page.l.countries %></i><br><br>
                     <% page.urls.countries.slice(0,9).forEach(function(country) { %>
-                    <a href="<%- country.url %>">
-                        <%- country.title %>
-                    </a><br>
+                        <a href="<%- country.url %>">
+                            <%- country.title %>
+                        </a><br>
                     <% }); %>
                     <div class="poloska"></div></div>
                 <div class="mini">
@@ -74,74 +74,74 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name 
     <% }); } } } %>
 
     <% if (typeof soon === 'object' && soon.length) { %>
-    <div class="poloska_bloka"></div>
-    <div style="padding: 7px 20px;
+        <div class="poloska_bloka"></div>
+        <div style="padding: 7px 20px;
 position: relative;
 border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- page.l.soon %></i></div>
-    <div class="mimiserblock">
-        <ul>
-        <% soon.forEach(function (movie) { %>
-        <li class="li_serial">
-            <a href="<%- movie.url %>" rel="nofollow">
-                <img src="<%- movie.poster %>" alt="<%= movie.title %>">
-                <br>
-                <%= movie.title %> (<%- movie.year %>)
-            </a>
-        </li>
-        <% }); %>
-        </ul>
-    </div>
+        <div class="mimiserblock">
+            <ul>
+                <% soon.forEach(function (movie) { %>
+                    <li class="li_serial">
+                        <a href="<%- movie.url %>" rel="nofollow">
+                            <img src="<%- movie.poster %>" alt="<%= movie.title %>">
+                            <br>
+                            <%= movie.title %> (<%- movie.year %>)
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
     <% } %>
 
     <% if (typeof news === 'object' && news.length) { %>
-    <% news.forEach(function (content) { %>
-    <div style="margin: 10px;">
-        <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
-            <div class="cinemapress-news-title">
-                <%= content.title %>
+        <% news.forEach(function (content) { %>
+            <div style="margin: 10px;">
+                <a href="<%- content.url %>" class="cinemapress-news" style="background-image:url('<%- content.image %>');">
+                    <div class="cinemapress-news-title">
+                        <%= content.title %>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
-    <% }); %>
+        <% }); %>
     <% } %>
 
     <% if (typeof page.adv === 'object' && page.adv.left) { %>
-    <div style="text-align: center; margin: 10px auto">
-        <%- page.adv.left %>
-    </div>
+        <div style="text-align: center; margin: 10px auto">
+            <%- page.adv.left %>
+        </div>
     <% } %>
 
     <% if (typeof recent === 'object' && recent.length) { %>
-    <% recent.forEach(function (comment) { %>
-    <div style="margin: 10px;">
-        <div class="cinemapress-recent">
-            <div class="cinemapress-recent-head">
-                <% if (comment.avatar) { %>
-                <div class="cinemapress-recent-head-avatar">
-                    <img src="<%- comment.avatar %>" alt="<%- comment.user %>">
-                </div>
-                <% } %>
-                <div class="cinemapress-recent-head-meta">
-                    <div>
-                        <a href="<%- comment.url %>"><%= comment.title %></a>
+        <% recent.forEach(function (comment) { %>
+            <div style="margin: 10px;">
+                <div class="cinemapress-comment">
+                    <div class="cinemapress-comment-head">
+                        <div class="cinemapress-comment-head-avatar">
+                            <img src="<%- comment.avatar %>" alt="<%= comment.user %>">
+                        </div>
+                        <div class="cinemapress-comment-head-meta">
+                            <div class="cinemapress-comment-head-meta-title">
+                                <a href="<%- comment.url %>" title="<%= comment.title %>"><%= comment.title %></a>
+                            </div>
+                            <div class="cinemapress-comment-user" data-comment-id="<%- comment.id %>">
+                                <div class="cinemapress-comment-user-name">
+                                    <%- comment.user %>
+                                </div><div class="cinemapress-comment-user-said">
+                                    <%- page.l.said %>
+                                </div><div class="cinemapress-comment-user-date">
+                                    <%- comment.date %>
+                                </div><div class="cinemapress-comment-user-link">
+                                    <a href="<%- comment.url %>#c<%- comment.id %>" title="<%= comment.title %>">#</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <span>
-                            <%- comment.user %>
-                        </span><span>
-                            <%- page.l.said %>
-                        </span><span>
-                            <%- comment.date %>
-                        </span>
+                    <div class="cinemapress-comment-bg cinemapress-comment-radius">
+                        <%- comment.comment %>
                     </div>
                 </div>
             </div>
-            <div class="cinemapress-recent-comment">
-                <%- comment.comment %>
-            </div>
-        </div>
-    </div>
-    <% }); %>
+        <% }); %>
     <% } %>
 
- </div>
+</div>

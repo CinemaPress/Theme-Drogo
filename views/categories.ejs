@@ -2,7 +2,7 @@
 <html lang="<%- page.language %>">
 <head>
 
-    <% include includes/head.ejs %>
+    <%- include('includes/head.ejs'); -%>
 
 </head>
 <body>
@@ -11,7 +11,7 @@
 
 <div class="wrapper">
 
-    <% include includes/header.ejs %>
+    <%- include('includes/header.ejs'); -%>
 
     <div class="contener">
         <div class="contener2">
@@ -28,9 +28,9 @@
                     </div>
 
                     <% if (typeof page.adv === 'object' && page.adv.top) { %>
-                    <div style="text-align: center; margin: 10px auto">
-                        <%- page.adv.top %>
-                    </div>
+                        <div style="text-align: center; margin: 10px auto">
+                            <%- page.adv.top %>
+                        </div>
                     <% } %>
 
                     <div style="margin: 10px auto; text-align: center">
@@ -38,41 +38,41 @@
                     </div>
 
                     <% if (typeof categories === 'object' && categories.length) { %>
-                    <div style="clear: both"></div>
-                    <% categories.forEach(function (content) { %>
-                    <div style="float:left;width:50%;">
-                        <div style="margin:10px;padding:0;position:relative">
-                            <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
-                            <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
-                        </div>
-                    </div>
-                    <% }); %>
-                    <div style="clear: both"></div>
+                        <div style="clear: both"></div>
+                        <% categories.forEach(function (content) { %>
+                            <div style="float:left;width:50%;">
+                                <div style="margin:10px;padding:0;position:relative">
+                                    <div class="cinemapress-categories" style="background-image:url('<%- content.image %>');"></div>
+                                    <a href="<%- content.url %>" class="cinemapress-categories-title"><%= content.title %></a>
+                                </div>
+                            </div>
+                        <% }); %>
+                        <div style="clear: both"></div>
                     <% } %>
 
                     <div style="clear:both"></div>
 
                     <% if (typeof page.adv === 'object' && page.adv.bottom) { %>
-                    <div style="text-align: center; margin: 10px auto">
-                        <%- page.adv.bottom %>
-                    </div>
+                        <div style="text-align: center; margin: 10px auto">
+                            <%- page.adv.bottom %>
+                        </div>
                     <% } %>
 
                     <% if (page.seo) { %>
-                    <div style="margin: 20px 10px;text-align: justify;">
-                        <%- page.seo %>
-                    </div>
+                        <div style="margin: 20px 10px;text-align: justify;">
+                            <%- page.seo %>
+                        </div>
                     <% } %>
 
                 </div>
             </div>
 
-            <% include includes/left.ejs %>
+            <%- include('includes/left.ejs'); -%>
 
         </div>
     </div>
 
-    <% include includes/footer.ejs %>
+    <%- include('includes/footer.ejs'); -%>
 
 </div>
 

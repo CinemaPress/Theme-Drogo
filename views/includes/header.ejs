@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header44">
         <div class="main_menu">
-            <a href="/"><img src="/themes/<%- page.theme %>/public/images/logo.png?v=<%- page.ver %>" style="height: 26px" alt="Logo"></a>
+            <a href="/"><img src="/themes/<%- page.theme %>/public/images/logo.svg?v=<%- page.ver %>" style="height: 26px" alt="Logo"></a>
         </div>
         <div class="user_panel">
             <div class="loginin continueViewingBlock" style="display: none;">
@@ -11,7 +11,7 @@
         <div class="randomMovieMenu">
             <div class="user_panel">
                 <div class="loginin cinemapress-random-menu">
-                    <a href="/?random" title="<%- page.l.lucky %>"><%- page.l.lucky %></a>
+                    <a href="/?random" title="<%= page.l.lucky %>"><%- page.l.lucky %></a>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="searchbar">
                 <form action="/<%- page.urls.search %>" name="searchform" method="get">
                     <input name="q" placeholder="<%- page.l.movieTitle %>" type="text" data-autocomplete="desktop">
-                    <button class="fbutton2" type="submit" title="<%- page.l.search %>" style="float: right;">
+                    <button class="fbutton2" type="submit" title="<%= page.l.search %>" style="float: right;">
                         <%- page.l.search %>
                     </button>
                     <div class="cinemapress-autocomplete" data-autocomplete="desktop"></div>
@@ -59,55 +59,55 @@
         <div class="horizontal">
 
             <% if (typeof top === 'object' && top.length) { %>
-            <div class="carousel">
-                <a class="carousel_prev carousel_left disable" href="">prev</a>
-                <div class="carousel_container">
-                    <ul class="portfolio_items">
-                        <% top.forEach(function (movie) { %>
-                        <li>
-                            <div class="inner">
-                                <a href="<%- movie.url %>" title="<%= movie.title %>">
-                                    <div style="position: relative;">
-                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
-                                        <% if (movie.quality) { %>
-                                        <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
-                                            <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
-                                        </div>
-                                        <% } %>
+                <div class="carousel">
+                    <a class="carousel_prev carousel_left disable" href="">prev</a>
+                    <div class="carousel_container">
+                        <ul class="portfolio_items">
+                            <% top.forEach(function (movie) { %>
+                                <li>
+                                    <div class="inner">
+                                        <a href="<%- movie.url %>" title="<%= movie.title %>">
+                                            <div style="position: relative;">
+                                                <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
+                                                <% if (movie.quality) { %>
+                                                    <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
+                                                        <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
+                                                    </div>
+                                                <% } %>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </li>
-                        <% }); %>
-                    </ul>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <a class="carousel_next carousel_right" href="">next</a>
                 </div>
-                <a class="carousel_next carousel_right" href="">next</a>
-            </div>
             <% } else if (typeof slider === 'object' && slider.length) { %>
-            <div class="carousel">
-                <a class="carousel_prev carousel_left disable" href="">prev</a>
-                <div class="carousel_container">
-                    <ul class="portfolio_items">
-                        <% slider.forEach(function (movie) { %>
-                        <li>
-                            <div class="inner">
-                                <a href="<%- movie.url %>" title="<%= movie.title %>">
-                                    <div class="cinemapress-poster">
-                                        <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
-                                        <% if (movie.quality) { %>
-                                        <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
-                                            <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
-                                        </div>
-                                        <% } %>
+                <div class="carousel">
+                    <a class="carousel_prev carousel_left disable" href="">prev</a>
+                    <div class="carousel_container">
+                        <ul class="portfolio_items">
+                            <% slider.forEach(function (movie) { %>
+                                <li>
+                                    <div class="inner">
+                                        <a href="<%- movie.url %>" title="<%= movie.title %>">
+                                            <div class="cinemapress-poster">
+                                                <img src="<%- movie.poster %>" style="width: 118px" alt="<%= movie.title %> (<%- movie.year %>)" title="<%= movie.title %> (<%- movie.year %>)">
+                                                <% if (movie.quality) { %>
+                                                    <div class="cinemapress-quality" style="margin: 3px; padding: 3px;font-size: 10px;">
+                                                        <span class="cinemapress-svg-quality" style="height: 8px !important;min-height: 8px !important;"></span>&nbsp;<%- movie.quality %>
+                                                    </div>
+                                                <% } %>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </li>
-                        <% }); %>
-                    </ul>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <a class="carousel_next carousel_right" href="">next</a>
                 </div>
-                <a class="carousel_next carousel_right" href="">next</a>
-            </div>
             <% } %>
         </div>
     </div>

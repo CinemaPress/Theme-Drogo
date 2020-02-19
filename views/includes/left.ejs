@@ -58,9 +58,10 @@ position: relative;
 border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name %></i></div>
         <div class="mimiserblock">
             <ul>
+                <% var moreEpisodes = false; %>
                 <% if (category.movies.length) {
                 category.movies.forEach(function (movie) { %>
-                    <li class="li_serial">
+                    <li class="li_serial" <% if (movie.hide) { moreEpisodes = true; %>style="display:none" data-more-episodes="hide"<% } %>>
                         <a href="<%- movie.url %>" rel="nofollow">
                             <img src="<%- movie.poster %>" alt="<%= movie.title %>">
                             <br><%= movie.title %><br>
@@ -69,6 +70,10 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name 
                     </li>
                 <% }); } %>
             </ul>
+
+            <% if (moreEpisodes) { %>
+                <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+            <% } %>
         </div>
 
     <% }); } } } %>

@@ -70,11 +70,12 @@ border-bottom: 1px solid #3f413f;"><i style="font-size:15px;"><%- category.name 
                     </li>
                 <% }); } %>
             </ul>
-
-            <% if (moreEpisodes) { %>
-                <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
-            <% } %>
         </div>
+
+        <% if (moreEpisodes) { %>
+            <div style="clear:both"></div>
+            <div class="moreEpisodes" onclick="var dme = document.querySelectorAll('[data-more-episodes]'); dme && dme.forEach(function(e) {e.style.display='block'});this.style.display='none'"><%- page.l.moreEpisodes %></div>
+        <% } %>
 
     <% }); } } } %>
 

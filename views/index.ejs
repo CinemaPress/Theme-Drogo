@@ -52,11 +52,7 @@
                             <div class="shortstory">
                                 <div class="shortstorytitle">
                                     <h3 class="zagolovki">
-                                        <a href="<%- movie.url %>"><%= movie.title %> (
-                                            <% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %>
-                                            <% } else { %><%- movie.year %>
-                                            <% } %>
-                                            )</a>
+                                        <a href="<%- movie.url %>"><%= movie.title %> (<% if (movie.season && movie.episode) { %><%- movie.season %> <%- page.l.season %> <%- movie.episode %> <%- page.l.episode %><% } else { %><%- movie.year %><% } %>)</a>
                                     </h3>
                                 </div>
                                 <div class="shortimg">

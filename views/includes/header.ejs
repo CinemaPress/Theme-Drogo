@@ -40,7 +40,9 @@
                                 <a href="/"><span class="name"><%- page.l.home %></span></a>
                             </td>
                             <td class="item">
-                                <a href="/<%- page.urls.year %>/2018"><span class="name"><%- page.l.premieres %></span></a>
+                                <% page.urls.years.slice(0, 1).forEach(function(year) { %>
+                                    <a href="<%- year.url %>"><span class="name"><%- page.l.premieres %></span></a>
+                                <% }); %>
                             </td>
                             <td class="item">
                                 <a href="/<%- page.urls.type %>/<%- page.urls.types.serial %>"><span

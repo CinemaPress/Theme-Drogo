@@ -226,7 +226,7 @@
                         </div>
                     </div>
                     <div class="relatednews">
-                        <ul class="ul_related"><% if (category.movies.length) { category.movies.splice(5, category.movies.length % 5); category.movies.forEach(function (movie) { %><li><a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"><img src="<%- movie.poster %>" style="height:165px; width:110px" alt="<%= movie.title %>"><%= movie.title %> (<%- movie.year %>)</a></li><% }); } %></ul>
+                        <ul class="ul_related"><% if (typeof category === 'object' && category.movies && category.movies.length) { category.movies.splice(5, category.movies.length % 5); category.movies.forEach(function (movie) { %><li><a href="<%- movie.url %>" title="<%= movie.title %> (<%- movie.year %>)"><img src="<%- movie.poster %>" style="height:165px; width:110px" alt="<%= movie.title %>"><%= movie.title %> (<%- movie.year %>)</a></li><% }); } %></ul>
                     </div>
                 <% }); } } } %>
 

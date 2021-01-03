@@ -73,7 +73,7 @@
                                     <div class="inner">
                                         <a href="<%- movie.url %>" title="<%= movie.title %>">
                                             <div style="position: relative;">
-                                                <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" style="width: 118px"
+                                                <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" style="width: 118px"
                                                      alt="<%= movie.title %> (<%- movie.year %>)"
                                                      title="<%= movie.title %> (<%- movie.year %>)">
                                                 <% if (movie.quality) { %>
@@ -102,7 +102,7 @@
                                     <div class="inner">
                                         <a href="<%- movie.url %>" title="<%= movie.title %>">
                                             <div class="cinemapress-poster">
-                                                <img src="<%- movie.poster_min %>" data-cinemapress-src="<%- movie.poster %>" style="width: 118px"
+                                                <img src="<%- movie.poster_min %>" class="lazy" data-src="<%- movie.poster %>" style="width: 118px"
                                                      alt="<%= movie.title %> (<%- movie.year %>)"
                                                      title="<%= movie.title %> (<%- movie.year %>)">
                                                 <% if (movie.quality) { %>

@@ -1,10 +1,10 @@
 # Theme «drogo»
 
-![Theme «drogo» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png "Theme «drogo» for CinemaPress")
+![Theme «drogo» for CinemaPress](https://raw.githubusercontent.com/CinemaPress/Theme-Drogo/master/screenshot.png)
 
 :art: Theme «drogo» for CinemaPress
 
-- [Drogo.CinemaPress.io](http://Drogo.CinemaPress.io/)
+- `«drogo»`
 
 ## How to install?
 1. Download [GitHub](https://github.com/CinemaPress/Theme-Drogo/archive/master.zip) or [GitLab](https://gitlab.com/CinemaPress/Theme-Drogo/repository/archive.zip) or [BitBucket](https://bitbucket.org/cinemapress/theme-drogo/get/master.zip)
